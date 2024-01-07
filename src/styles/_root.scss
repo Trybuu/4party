@@ -1,0 +1,13 @@
+:root {
+  font-family: $font-text, Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+
+  color-scheme: normal;
+  color: $font-color-white;
+  background-image: $background-gradient;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,31 @@
+@import '../../styles/variables';
+
+.logo {
+  display: inline-block;
+
+  font-family: $font-logo;
+  font-size: 4rem;
+  font-weight: 400;
+  text-align: center;
+  text-shadow: 0 0 10px $accent-color-primary;
+
+  animation-name: neon-effect;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+
+  &__headlight {
+    color: $accent-color-primary;
+  }
+}
+
+@keyframes neon-effect {
+  0% {
+    text-shadow: 0 0 10px $accent-color-primary;
+  }
+  50% {
+    text-shadow: 0 0 10px $accent-color-secondary;
+  }
+  100% {
+    text-shadow: 0 0 10px $accent-color-primary;
+  }
+}

@@ -1,0 +1,19 @@
+// In case you want to use variables from this file you need to import
+// this file in style file of your component
+
+// Colors
+$background-gradient: linear-gradient(
+  to right,
+  rgba(187, 53, 254, 1) 0%,
+  50%,
+  rgba(163, 85, 254, 1) 100%
+);
+
+$font-color-white: rgba(255, 255, 255, 0.87);
+$font-color-dark: rgb(94, 94, 94);
+$accent-color-primary: rgb(242, 188, 27);
+$accent-color-secondary: rgb(107, 152, 242);
+
+// Fonts
+$font-logo: 'Poiret One', sans-serif;
+$font-text: 'Kulim Park', sans-serif;
