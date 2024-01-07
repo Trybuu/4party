@@ -1,0 +1,16 @@
+@import '../../styles/variables';
+
+.button {
+  padding: 1rem 2rem;
+
+  background-image: $background-gradient;
+  color: $font-color-white;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  border: none;
+  border-radius: 0.5rem;
+}

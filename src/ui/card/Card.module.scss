@@ -1,0 +1,13 @@
+@import '../../styles/variables';
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-self: stretch;
+
+  padding: 2rem 1rem;
+
+  background-color: $background-bright;
+
+  border-radius: 0.5rem 0.5rem 0 0;
+}
