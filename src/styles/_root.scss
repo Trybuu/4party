@@ -18,6 +18,11 @@
   box-sizing: border-box;
 }
 
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
 button {
   font-family: $font-text;
 }

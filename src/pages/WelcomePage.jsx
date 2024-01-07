@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import Button from '../ui/buttons/Button'
 import Card from '../ui/card/Card'
 import Content from '../ui/content/Content'
@@ -17,7 +19,9 @@ export default function WelcomePage() {
         </p>
       </Content>
       <Card>
-        <Button>Zaczynajmy</Button>
+        <Link to="login">
+          <Button>Zaczynajmy</Button>
+        </Link>
       </Card>
     </Wrapper>
   )

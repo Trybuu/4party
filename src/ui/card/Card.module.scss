@@ -10,4 +10,17 @@
   background-color: $background-bright;
 
   border-radius: 0.5rem 0.5rem 0 0;
+
+  animation-name: slide-in;
+  animation-duration: 1s;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(200%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
 }
