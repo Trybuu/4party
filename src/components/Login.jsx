@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
@@ -7,27 +7,28 @@ import { logIn } from '../features/auth/authSlice'
 import classes from './Login.module.scss'
 
 export default function Login() {
-  const [authStatus, setAuthStatus] = useState('') // '', 'failed', 'succes'
-
   const navigate = useNavigate()
 
   const user = useSelector((state) => state.auth.user)
   const dispatch = useDispatch()
 
+  const [isAnySubmit, setIsAnySubmit] = useState(0)
+
+  useEffect(() => {
+    if (user.isLoggedIn === true) {
+      navigate('/home')
+    }
+  }, [user.isLoggedIn])
+
   function handleSubmit(event) {
     event.preventDefault()
+
+    setIsAnySubmit((prev) => prev + 1)
 
     const formData = new FormData(event.target)
     const data = Object.fromEntries(formData.entries())
 
     dispatch(logIn({ userName: data.userName, password: data.password }))
-
-    if (!user.isLogin) {
-      setAuthStatus('failed')
-    } else {
-      setAuthStatus('succes')
-      navigate('/home')
-    }
   }
 
   return (
@@ -50,7 +51,7 @@ export default function Login() {
         />
 
         <p className={classes.form__error}>
-          {authStatus === 'failed' ? (
+          {user.isLoggedIn === false && isAnySubmit > 0 ? (
             <span>Błędna nazwa użytkownika lub hasło</span>
           ) : (
             ''
