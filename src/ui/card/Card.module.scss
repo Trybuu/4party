@@ -4,10 +4,12 @@
   display: flex;
   justify-content: center;
   align-self: stretch;
+  flex-wrap: wrap;
 
   padding: 2rem 1rem 6rem 1rem;
 
   background-color: $background-bright;
+  color: $font-color-dark;
 
   border-radius: 0.5rem 0.5rem 0 0;
 
