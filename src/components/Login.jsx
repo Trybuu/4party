@@ -1,11 +1,15 @@
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+
 import { logIn } from '../features/auth/authSlice'
 
 import classes from './Login.module.scss'
 
 export default function Login() {
   const [authStatus, setAuthStatus] = useState('') // '', 'failed', 'succes'
+
+  const navigate = useNavigate()
 
   const user = useSelector((state) => state.auth.user)
   const dispatch = useDispatch()
@@ -22,6 +26,7 @@ export default function Login() {
       setAuthStatus('failed')
     } else {
       setAuthStatus('succes')
+      navigate('/home')
     }
   }
 

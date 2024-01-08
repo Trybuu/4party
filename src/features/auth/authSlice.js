@@ -16,8 +16,8 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    logIn: (state, payload) => {
-      const userToCheck = payload.payload
+    logIn: (state, action) => {
+      const userToCheck = action.payload
 
       const [userFound] = [
         ...users.filter((user) => user.userName === userToCheck.userName),
@@ -31,7 +31,6 @@ export const authSlice = createSlice({
         userFound.userName !== userToCheck.userName &&
         userFound.password !== userToCheck.password
       ) {
-        console.log('User not exist')
         return
       }
 
