@@ -4,4 +4,9 @@ export const users = [
     userName: 'user',
     password: 'user123',
   },
+  {
+    id: 'admin',
+    userName: 'admin',
+    password: 'admin123',
+  },
 ]

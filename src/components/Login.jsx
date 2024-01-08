@@ -12,8 +12,8 @@ export default function Login() {
 
     const formData = new FormData(event.target)
     const data = Object.fromEntries(formData.entries())
-    console.log(data)
-    console.log(auth)
+
+    dispatch(logIn({ userName: data.userName, password: data.password }))
   }
 
   return (
@@ -21,8 +21,8 @@ export default function Login() {
       <form onSubmit={handleSubmit} className={classes.form}>
         <input
           type="text"
-          id="username"
-          name="username"
+          id="userName"
+          name="userName"
           placeholder="Nazwa użytkownika"
           className={classes.form__input}
         />

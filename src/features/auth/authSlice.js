@@ -8,6 +8,7 @@ const initialState = {
     id: '',
     userName: '',
     password: '',
+    isLogin: false,
   },
 }
 
@@ -15,12 +16,38 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    logIn: (state) => {
-      state.user = {
-        id: 0,
-        userName: 'Marek',
-        password: 'Marek123',
+    logIn: (state, payload) => {
+      const userToCheck = payload.payload
+
+      const [userFound] = [
+        ...users.filter((user) => user.userName === userToCheck.userName),
+      ]
+
+      const isExist =
+        userFound === undefined ? [] : Object.keys(userFound).length !== 0
+
+      if (
+        !isExist &&
+        userFound.userName !== userToCheck.userName &&
+        userFound.password !== userToCheck.password
+      ) {
+        console.log('User not exist')
+        return
       }
+
+      state.user = {
+        id: userToCheck.userName,
+        userName: userToCheck.userName,
+        password: userToCheck.password,
+        isLogin: true,
+      }
+
+      alert(`
+        ${state.user.id}
+        ${state.user.userName}
+        ${state.user.password}
+        ${state.user.isLogin}
+        `)
     },
   },
 })
