@@ -41,13 +41,6 @@ export const authSlice = createSlice({
         password: userToCheck.password,
         isLogin: true,
       }
-
-      alert(`
-        ${state.user.id}
-        ${state.user.userName}
-        ${state.user.password}
-        ${state.user.isLogin}
-        `)
     },
   },
 })

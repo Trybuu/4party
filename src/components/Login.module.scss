@@ -35,6 +35,12 @@
     border: none;
     border-radius: 0.5rem;
   }
+
+  &__error {
+    color: red;
+
+    font-size: 0.75rem;
+  }
 }
 
 .no-registered {
