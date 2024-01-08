@@ -1,12 +1,19 @@
+import { useSelector, useDispatch } from 'react-redux'
+import { logIn } from '../features/auth/authSlice'
+
 import classes from './Login.module.scss'
 
 export default function Login() {
+  const auth = useSelector((state) => state.auth.user)
+  const dispatch = useDispatch()
+
   function handleSubmit(event) {
     event.preventDefault()
 
     const formData = new FormData(event.target)
     const data = Object.fromEntries(formData.entries())
     console.log(data)
+    console.log(auth)
   }
 
   return (
