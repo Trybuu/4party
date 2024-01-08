@@ -12,6 +12,10 @@ const initialState = {
   },
 }
 
+// Zaimplementuj funkcję która odczytuje czy jest użytkownik w localStorage jeśli tak
+// przypisz wartości do localStorage
+// jeśli nie zostaw wartości inicjujące
+
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -38,10 +42,13 @@ export const authSlice = createSlice({
           isLoggedIn: true,
         }
 
-        localStorage.setItem('activeUser', {
-          id: state.user.id,
-          userName: state.user.userName,
-        })
+        localStorage.setItem(
+          'activeUser',
+          JSON.stringify({
+            id: state.user.id,
+            userName: state.user.userName,
+          }),
+        )
       } else {
         state.user.isLoggedIn = false
         return

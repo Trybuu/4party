@@ -7,7 +7,7 @@
   font-size: 4rem;
   font-weight: 400;
   text-align: center;
-  text-shadow: 0 0 10px $accent-color-primary;
+  text-shadow: 3px 3px 3px $accent-color-primary;
 
   animation-name: neon-effect;
   animation-duration: 5s;
@@ -20,12 +20,12 @@
 
 @keyframes neon-effect {
   0% {
-    text-shadow: 0 0 10px $accent-color-primary;
+    text-shadow: 3px 3px 3px $accent-color-primary;
   }
   50% {
-    text-shadow: 0 0 10px $accent-color-secondary;
+    text-shadow: 3px 3px 3px $accent-color-secondary;
   }
   100% {
-    text-shadow: 0 0 10px $accent-color-primary;
+    text-shadow: 3px 3px 3px $accent-color-primary;
   }
 }
