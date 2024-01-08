@@ -53,3 +53,13 @@
     border: none;
   }
 }
+
+@keyframes slide-in {
+  from {
+    margin-top: 200%;
+  }
+
+  to {
+    margin-top: 0;
+  }
+}
