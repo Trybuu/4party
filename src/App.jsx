@@ -4,15 +4,22 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import WelcomePage from './pages/WelcomePage'
 import LoginPage from './pages/LoginPage'
 import HomePage from './pages/HomePage'
+import WelcomeLayout from './layouts/WelcomeLayout'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <WelcomePage />,
-  },
-  {
-    path: '/login',
-    element: <LoginPage />,
+    element: <WelcomeLayout />,
+    children: [
+      {
+        index: true,
+        element: <WelcomePage />,
+      },
+      {
+        path: '/login',
+        element: <LoginPage />,
+      },
+    ],
   },
   {
     path: '/home',
