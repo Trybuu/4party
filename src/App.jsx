@@ -6,6 +6,8 @@ import LoginPage from './pages/LoginPage'
 import HomePage from './pages/HomePage'
 import WelcomeLayout from './layouts/WelcomeLayout'
 import HomeLayout from './layouts/HomeLayout'
+import SetPlayersLayout from './layouts/SetPlayersLayout'
+import SetPlayers from './components/SetPlayers'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,16 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <LoginPage />,
+      },
+    ],
+  },
+  {
+    path: '/setplayers',
+    element: <SetPlayersLayout />,
+    children: [
+      {
+        index: true,
+        element: <SetPlayers />,
       },
     ],
   },

@@ -1,0 +1,41 @@
+@import '../../styles/variables';
+
+.input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  background-color: $background-gray;
+  border-radius: 0.5rem;
+
+  & input {
+    font-family: $font-text;
+    font-size: 0.75rem;
+    font-weight: 200;
+
+    padding: 0.5rem;
+
+    background-color: transparent;
+
+    border: none;
+    border-radius: 0.5rem 0 0 0.5rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & button {
+    padding: 0.5rem;
+
+    background-image: $background-gradient;
+    color: $font-color-white;
+
+    border: none;
+    border-radius: 0.5rem;
+
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(1.1);
+    }
+  }
+}

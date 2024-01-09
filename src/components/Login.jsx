@@ -16,7 +16,7 @@ export default function Login() {
 
   useEffect(() => {
     if (user.isLoggedIn === true) {
-      navigate('/home')
+      navigate('/setplayers')
     }
   }, [user.isLoggedIn])
 
