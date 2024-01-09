@@ -1,20 +1,28 @@
 import { useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+
 import classes from './SetPlayers.module.scss'
 import Input from '../ui/inputs/Input'
 import Button from '../ui/buttons/Button'
 import ErrorMessage from '../ui/error/ErrorMessage'
+import { addPlayers } from '../features/players/playersSlice'
+
+// Dodać możliwość edytowania graczy po ich dodaniu
+// Dodać możliwość usunięcia gracza
+// Zapisać graczy w globalnym stanie i w localStorage
 
 export default function SetPlayers() {
   const [players, setPlayers] = useState({})
 
-  // Dodać możliwość edytowania graczy po ich dodaniu
-  // Dodać możliwość usunięcia gracza
-  // Zapisać graczy w globalnym stanie i w localStorage
+  const playersData = useSelector((state) => state.players.players)
+  const dispatch = useDispatch()
 
   const [isPlayerExist, setIsPlayerExist] = useState(false)
 
   const input = useRef()
+
+  const navigate = useNavigate()
 
   function handleAddPlayer() {
     const playerName = input.current.value
@@ -43,7 +51,8 @@ export default function SetPlayers() {
   }
 
   function handlePlayersReady() {
-    console.log('READY')
+    dispatch(addPlayers(players))
+    navigate('/home')
   }
 
   return (
