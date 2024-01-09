@@ -6,10 +6,12 @@ import ErrorMessage from '../ui/error/ErrorMessage'
 export default function SetPlayers() {
   const [players, setPlayers] = useState({
     Marek: {
+      id: 0,
       name: 'Marek',
       score: 0,
     },
     Julka: {
+      id: 1,
       name: 'Julka',
       score: 0,
     },
@@ -32,6 +34,7 @@ export default function SetPlayers() {
 
       const newPlayers = { ...players }
       const player = {
+        id: Object.keys(players).length,
         name: playerName,
         score: 0,
       }
@@ -43,7 +46,12 @@ export default function SetPlayers() {
       input.current.focus()
     }
 
-    players.map((player) => console.log(player))
+    const playerValues = Object.values(players)
+    console.log(playerValues)
+
+    playerValues.forEach((player) => {
+      console.log(`${player.name} ma wynik ${player.score} i id ${player.id}`)
+    })
   }
 
   return (
@@ -64,6 +72,16 @@ export default function SetPlayers() {
             : undefined
         }
       />
+
+      <div className={classes.players}>
+        {Object.values(players).map((player) => (
+          <Input key={player.id}>
+            <input type="text" value={player.name} disabled />
+            <button>-</button>
+            <button>Edit</button>
+          </Input>
+        ))}
+      </div>
     </div>
   )
 }
