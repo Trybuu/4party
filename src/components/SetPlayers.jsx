@@ -5,16 +5,16 @@ import ErrorMessage from '../ui/error/ErrorMessage'
 
 export default function SetPlayers() {
   const [players, setPlayers] = useState({
-    Marek: {
-      id: 0,
-      name: 'Marek',
-      score: 0,
-    },
-    Julka: {
-      id: 1,
-      name: 'Julka',
-      score: 0,
-    },
+    // Marek: {
+    //   id: 0,
+    //   name: 'Marek',
+    //   score: 0,
+    // },
+    // Julka: {
+    //   id: 1,
+    //   name: 'Julka',
+    //   score: 0,
+    // },
   })
 
   const [isPlayerExist, setIsPlayerExist] = useState(false)
@@ -55,23 +55,25 @@ export default function SetPlayers() {
   }
 
   return (
-    <div>
-      <Input>
-        <input
-          ref={input}
-          type="text"
-          placeholder="Nazwa gracza"
-          maxLength={16}
+    <div className={classes['max-width']}>
+      <div>
+        <Input>
+          <input
+            ref={input}
+            type="text"
+            placeholder="Nazwa gracza"
+            maxLength={16}
+          />
+          <button onClick={handleAddPlayer}>+</button>
+        </Input>
+        <ErrorMessage
+          error={
+            isPlayerExist === true
+              ? 'Gracz o podanej nazwie już istnieje!'
+              : undefined
+          }
         />
-        <button onClick={handleAddPlayer}>+</button>
-      </Input>
-      <ErrorMessage
-        error={
-          isPlayerExist === true
-            ? 'Gracz o podanej nazwie już istnieje!'
-            : undefined
-        }
-      />
+      </div>
 
       <div className={classes.players}>
         {Object.values(players).map((player) => (

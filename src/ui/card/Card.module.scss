@@ -6,6 +6,9 @@
   align-self: stretch;
   flex-wrap: wrap;
 
+  max-height: 50vh;
+  overflow-y: scroll;
+
   padding: 2rem 1rem 6rem 1rem;
 
   background-color: $background-bright;
@@ -15,6 +18,10 @@
 
   animation-name: slide-in;
   animation-duration: 1s;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @keyframes slide-in {
