@@ -12,10 +12,6 @@ const initialState = {
   },
 }
 
-// Zaimplementuj funkcję która odczytuje czy jest użytkownik w localStorage jeśli tak
-// przypisz wartości do localStorage
-// jeśli nie zostaw wartości inicjujące
-
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -54,9 +50,21 @@ export const authSlice = createSlice({
         return
       }
     },
+    logOut: (state) => {
+      console.log('LOG OUT GLOBAL FUNCTION')
+      state.user = {
+        id: '',
+        userName: '',
+        password: '',
+        isLoggedIn: false,
+      }
+
+      localStorage.removeItem('activeUser')
+      localStorage.removeItem('players')
+    },
   },
 })
 
-export const { logIn } = authSlice.actions
+export const { logIn, logOut } = authSlice.actions
 
 export default authSlice.reducer
