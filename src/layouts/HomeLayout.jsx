@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 import Content from '../ui/content/Content'
-import LogOutButton from '../ui/buttons/LogOutButton'
+import Nav from '../ui/nav/Nav'
 
 export default function HomeLayout() {
   const navigate = useNavigate()
@@ -18,8 +18,8 @@ export default function HomeLayout() {
 
   return (
     <Content>
+      <Nav />
       <Outlet />
-      <LogOutButton />
     </Content>
   )
 }

@@ -3,9 +3,12 @@
 .button {
   padding: 0.5rem 1rem;
 
+  font-size: 1rem;
+  font-weight: 200;
+
   color: $font-color-white;
   background-color: transparent;
 
-  border: 2px solid;
+  border: 1px solid;
   border-radius: 0.5rem;
 }

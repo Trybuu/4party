@@ -18,6 +18,10 @@
   }
 }
 
+.logo--small {
+  font-size: 2rem;
+}
+
 @keyframes neon-effect {
   0% {
     text-shadow: 3px 3px 3px $accent-color-primary;
