@@ -1,24 +1,24 @@
-@import '../styles/variables';
+// @import '../styles/variables';
 
-.home-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  // gap: 1rem;
+// .home-content {
+//   display: flex;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+//   // gap: 1rem;
 
-  width: 100%;
-  height: 88vh;
+//   width: 100%;
+//   height: 88vh;
 
-  padding: 2rem 0 17px 17px;
+//   padding: 2rem 0 17px 17px;
 
-  overflow: scroll;
+//   overflow: scroll;
 
-  background-color: $background-bright;
+//   background-color: $background-bright;
 
-  border-radius: 0.5rem;
-  box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.2);
-}
+//   border-radius: 0.5rem;
+//   box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.2);
+// }
 
-.home-content::-webkit-scrollbar {
-  overflow: hidden;
-}
+// .home-content::-webkit-scrollbar {
+//   overflow: hidden;
+// }

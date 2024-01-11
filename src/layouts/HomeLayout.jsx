@@ -3,6 +3,8 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import Content from '../ui/content/Content'
 import Nav from '../ui/nav/Nav'
 
+import classes from './HomeLayout.module.scss'
+
 export default function HomeLayout() {
   const navigate = useNavigate()
 
@@ -19,7 +21,9 @@ export default function HomeLayout() {
   return (
     <Content>
       <Nav />
-      <Outlet />
+      <div className={classes['home-content']}>
+        <Outlet />
+      </div>
     </Content>
   )
 }

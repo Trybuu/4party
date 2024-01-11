@@ -8,6 +8,7 @@ import WelcomeLayout from './layouts/WelcomeLayout'
 import HomeLayout from './layouts/HomeLayout'
 import SetPlayersLayout from './layouts/SetPlayersLayout'
 import SetPlayers from './components/SetPlayers'
+import Charades from './pages/CharadesPage'
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: 'charades',
+        element: <Charades />,
       },
     ],
   },
